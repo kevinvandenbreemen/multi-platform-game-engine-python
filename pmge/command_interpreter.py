@@ -19,9 +19,9 @@ class CommandInterpreter:
             print(f"No command {commandName} exists...")
         else:
             result[0].handle(args)
+            return True
 
-        # matcher = lambda item: 
-        pass
+        return False
 
     def addCommand(self, commandInstance):
         if issubclass(type(commandInstance), CommandInterface):
