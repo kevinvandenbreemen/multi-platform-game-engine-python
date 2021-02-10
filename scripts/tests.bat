@@ -2,4 +2,4 @@
 
 cd /D "%~dp0"
 
-python -m unittest discover ..\tests
+python -m unittest discover ..\pmge
