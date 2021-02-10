@@ -1,5 +1,5 @@
-from command.default_commands import CommandInterface
-from command.default_commands import About
+from default_commands import CommandInterface
+from default_commands import About
 
 class CommandInterpreter:
 
