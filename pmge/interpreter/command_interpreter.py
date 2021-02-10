@@ -1,8 +1,5 @@
-import sys
-sys.path.append(".")
 from command.default_commands import CommandInterface
 from command.default_commands import About
-
 
 class CommandInterpreter:
 
@@ -38,4 +35,3 @@ if __name__ == '__main__':
     interpreter.addCommand(About())
     interpreter.handle('test')
     interpreter.handle("ABOUT me")
-    print(sys.path)
