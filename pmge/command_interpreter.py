@@ -22,7 +22,7 @@ class CommandInterpreter:
             try:
                 result[0].handle(args)
                 return True
-            except Exception as err:
+            except BaseException as err:
                 print(f"Error handling command {commandName} -- '{err}':")
                 traceback.print_exc()
 
