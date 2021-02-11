@@ -2,4 +2,4 @@
 
 echo "Executing tests..."
 
-python -m unittest discover ../pmge
+python -m unittest discover pmge
