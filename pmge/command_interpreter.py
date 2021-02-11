@@ -1,5 +1,6 @@
 from default_commands import CommandInterface
 from default_commands import About
+import traceback
 
 class CommandInterpreter:
 
@@ -16,10 +17,14 @@ class CommandInterpreter:
         flt = lambda cmd: cmd.getName() == commandName
         result = list(filter(flt, self._supportedCommands))
         if not result:
-            print(f"No command {commandName} exists...")
+            print(f"No command '{commandName}' exists...")
         else:
-            result[0].handle(args)
-            return True
+            try:
+                result[0].handle(args)
+                return True
+            except Exception as err:
+                print(f"Error handling command {commandName} -- '{err}':")
+                traceback.print_exc()
 
         return False
 
