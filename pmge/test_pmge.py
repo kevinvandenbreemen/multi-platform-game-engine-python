@@ -15,7 +15,7 @@ class CommandTest(unittest.TestCase):
 
     def test_indicatesCommandWasNotFound(self):
         interpreter = CommandInterpreter()
-        self.assertTrue(interpreter.handle("noSuchCommand"))
+        self.assertFalse(interpreter.handle("noSuchCommand"))
 
 if __name__ == '__main__':
     unittest.main()
