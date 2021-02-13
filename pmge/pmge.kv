@@ -1,0 +1,21 @@
+#:kivy 2.0.0
+
+<PMGEWindow>:
+    canvas:
+        Rectangle:
+            pos: self.center_x - 5, 0
+            size: 2, self.height
+
+    Label:
+        font_size: 70  
+        center_x: root.width / 4
+        top: root.top - 50
+        text: "0"
+
+
+    TextInput:
+        font_size: 70  
+        center_x: root.width / 4
+        top: root.top - 70
+        text: "0"
+        
