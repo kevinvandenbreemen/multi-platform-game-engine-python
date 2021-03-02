@@ -1,6 +1,11 @@
-from default_commands import CommandInterface
-from default_commands import About
 import traceback
+import abc
+
+''' Default commands in the language '''
+class CommandInterface(metaclass=abc.ABCMeta):
+    @classmethod
+    def __subclasshook__(cls, subclass):
+        return (hasattr(subclass, 'handle') and hasattr(subclass, 'getName'))
 
 class CommandInterpreter:
 
@@ -33,10 +38,3 @@ class CommandInterpreter:
             self._supportedCommands.append(commandInstance)
         else:
             print(f"{type(commandInstance)} is not a command.  Please implement the {CommandInterface} to mark it a command")
-
-if __name__ == '__main__':
-    
-    interpreter = CommandInterpreter()
-    interpreter.addCommand(About())
-    interpreter.handle('test')
-    interpreter.handle("ABOUT me")

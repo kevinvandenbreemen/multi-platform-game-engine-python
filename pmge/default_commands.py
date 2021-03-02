@@ -1,10 +1,5 @@
-import abc
-
-''' Default commands in the language '''
-class CommandInterface(metaclass=abc.ABCMeta):
-    @classmethod
-    def __subclasshook__(cls, subclass):
-        return (hasattr(subclass, 'handle') and hasattr(subclass, 'getName'))
+from command_interpreter import CommandInterpreter
+from command_interpreter import CommandInterface
 
 @CommandInterface.register
 class About:
